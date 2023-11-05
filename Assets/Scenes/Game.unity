@@ -2032,6 +2032,7 @@ GameObject:
   - component: {fileID: 1053939531}
   - component: {fileID: 1053939530}
   - component: {fileID: 1053939529}
+  - component: {fileID: 1053939534}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Untagged
@@ -2132,6 +2133,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1053939534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1053939528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 407d432864c75094ca59996004dc1228, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _collisionParticlePrefab: {fileID: 7267354095277898695, guid: 21efab1feeb673c4b83f22d676b312f1, type: 3}
 --- !u!4 &1231867790 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6452328193668298180, guid: d42de6fdf6eb90d4b9dabf9e73d0d658, type: 3}
