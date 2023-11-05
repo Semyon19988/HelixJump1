@@ -4,15 +4,17 @@ using UnityEngine;
 public class TowerRotation : MonoBehaviour
 {
     [SerializeField] [Min(0.0f)] private float _rotationSpeed;
-    [SerializeField] [Min(0.0f)] private float _angularDrag;
-    [SerializeField] private Rigidbody _rigidbody;
 
-    private void OnValidate() =>
-	    _rigidbody.angularDrag = _angularDrag;
+    private Quaternion _newRotationAngle;
 
-    public void Rotate(float xAxis)
+    private void Update() => transform.rotation = CalculateRotation(_rotationSpeed * Time.deltaTime);
+
+    private Quaternion CalculateRotation(float rotationSpeed) =>
+        Quaternion.Slerp(transform.rotation, _newRotationAngle, rotationSpeed);
+
+    public void AddRotation(float xAxis)
     {
-	    Vector3 torque = Vector3.up * xAxis * _rotationSpeed * Time.deltaTime * -1;
-	    _rigidbody.AddTorque(torque, ForceMode.Acceleration);
+        Vector3 newEulerRotationAngle = transform.eulerAngles + Vector3.down * xAxis;
+        _newRotationAngle = Quaternion.Euler(newEulerRotationAngle);
     }
 }
