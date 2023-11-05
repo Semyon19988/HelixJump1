@@ -19,6 +19,6 @@ public class PlayerInputHandler : MonoBehaviour
    private void RotateTower(Swipe swipe)
    {
 	   float xAxis = swipe.Delta.x;
-	   _towerRotation.Rotate(xAxis);
+	   _towerRotation.AddRotation(xAxis);
    }
 }

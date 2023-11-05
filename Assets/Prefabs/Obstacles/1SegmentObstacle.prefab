@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1143469529093811405}
   - component: {fileID: 1143469529093811404}
   - component: {fileID: 1143469529093811407}
+  - component: {fileID: -2997305726531250377}
   m_Layer: 0
   m_Name: 1SegmentObstacle
   m_TagString: Untagged
@@ -336,3 +337,17 @@ MonoBehaviour:
         m_NumberOfSides: 16
         m_HeightCuts: 0
         m_Smooth: 1
+--- !u!64 &-2997305726531250377
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1143469529093811393}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
