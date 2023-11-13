@@ -1,6 +1,4 @@
-﻿using System;
-using Physics;
-using Platforms;
+﻿using Platforms.Parts;
 using UnityEngine;
 
 namespace Ball
@@ -9,7 +7,7 @@ namespace Ball
 	{
 		[SerializeField] private BallBounce _bounce;
 		[SerializeField] private BallParticles _particles;
-		[SerializeField] private Transform _ball;
+		[SerializeField] private BallDestroyer _destroyer;
 
 		private bool _collided;
 
@@ -17,7 +15,7 @@ namespace Ball
 		{
 			if (other.gameObject.TryGetComponent(out PlatformObstacle _))
 			{
-				Destroy();
+				_destroyer.Destroy();
 				return;
 			}
 			if (_collided)
@@ -30,11 +28,5 @@ namespace Ball
 		}
 
 		private void OnCollisionExit(Collision other) => _collided = false;
-
-		private void Destroy()
-		{
-			_particles.EmitDestroyParticles(_ball.position);
-			Destroy(_ball.gameObject);
-		}
 	}
 }
